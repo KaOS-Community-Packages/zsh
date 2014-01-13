@@ -37,6 +37,7 @@ build() {
 	cd "${srcdir}/${pkgname}-${pkgver}"
 
 	./configure --prefix=/usr \
+	        --bindir=/bin \
 		--docdir=/usr/share/doc/zsh \
 		--htmldir=/usr/share/doc/zsh/html \
 		--enable-etcdir=/etc/zsh \
