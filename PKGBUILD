@@ -1,7 +1,5 @@
-# Maintainer : KCP
-
 pkgname=zsh
-pkgver=5.0.5
+pkgver=5.0.6
 pkgrel=1
 pkgdesc='A very advanced and programmable command interpreter (shell) for UNIX'
 depends=('pcre' 'libcap' 'gdbm')
@@ -10,12 +8,12 @@ install=zsh.install
 arch=('x86_64')
 url='http://www.zsh.org/'
 license=('custom')
-makedepends=('pcre' 'libcap<=2.23' 'gdbm')
+makedepends=('pcre' 'libcap' 'gdbm')
 source=("http://www.zsh.org/pub/zsh-${pkgver}.tar.bz2"
         "http://www.zsh.org/pub/zsh-${pkgver}-doc.tar.bz2"
         'zprofile')
-md5sums=('6156dc2f19b0a067bdbc0fb7f81e2017'
-         '1eea70e7401a7a2116fa8de6ee5e8d32'
+md5sums=('7150a6abc2aa1a79d81ed9a282594225'
+         '3333759b5ae9710ceed11b02645a0049'
          '92946911e57d05f1a3f1272b136c85b5')
 
 prepare() {
