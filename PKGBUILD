@@ -1,5 +1,5 @@
 pkgname=zsh
-pkgver=5.3.1
+pkgver=5.4
 pkgrel=1
 pkgdesc='A very advanced and programmable command interpreter (shell) for UNIX'
 depends=('pcre' 'libcap' 'gdbm')
@@ -12,8 +12,8 @@ makedepends=('pcre' 'libcap' 'gdbm')
 source=("http://www.zsh.org/pub/${pkgname}-${pkgver}.tar.xz"
         "http://www.zsh.org/pub/${pkgname}-${pkgver}-doc.tar.xz"
         'zprofile')
-md5sums=('67d3e5ed99de68340c16aef613b0ecf7'
-         '6b908409528e77e00a26b7283f1f425d'
+md5sums=('5051c31f20173d88ce307f514f23a409'
+         '43bc3e821d9d486587bc8507640a0475'
          '92946911e57d05f1a3f1272b136c85b5')
 
 prepare() {
