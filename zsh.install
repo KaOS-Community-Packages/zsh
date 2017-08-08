@@ -2,8 +2,8 @@ infodir=usr/share/info
 filelist=(zsh.info zsh.info-1 zsh.info-2 zsh.info-3 zsh.info-4 zsh.info-5 zsh.info-6)
 
 post_install() {
-	grep -qe '^/bin/zsh$' etc/shells || echo '/bin/zsh' >> etc/shells
-	grep -qe '^/usr/bin/zsh$' etc/shells || echo '/usr/bin/zsh' >> etc/shells
+	sed -i -r '/^(\/usr)?\/bin\/zsh$/d' etc/shells
+	echo '/bin/zsh' >> etc/shells
 	[ -x usr/bin/install-info ] || return 0
 	for file in ${filelist[@]}; do
 		install-info ${infodir}/${file}.gz ${infodir}/dir 2> /dev/null
