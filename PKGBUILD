@@ -1,6 +1,6 @@
 pkgname=zsh
 pkgver=5.4.2
-pkgrel=1
+pkgrel=2
 pkgdesc='A very advanced and programmable command interpreter (shell) for UNIX'
 depends=('pcre' 'libcap' 'gdbm')
 backup=('etc/zsh/zprofile')
@@ -8,7 +8,7 @@ install=zsh.install
 arch=('x86_64')
 url='http://www.zsh.org/'
 license=('custom')
-makedepends=('pcre' 'libcap' 'gdbm')
+makedepends=('pcre' 'libcap' 'gdbm' 'clang')
 source=("http://www.zsh.org/pub/${pkgname}-${pkgver}.tar.gz"
         "http://www.zsh.org/pub/${pkgname}-${pkgver}-doc.tar.xz"
         'zprofile')
