@@ -1,6 +1,6 @@
 pkgname=zsh
 pkgver=5.9
-pkgrel=1
+pkgrel=2
 pkgdesc='A very advanced and programmable command interpreter (shell) for UNIX'
 depends=('pcre' 'libcap' 'gdbm')
 backup=('etc/zsh/zprofile')
@@ -11,13 +11,18 @@ license=('custom')
 makedepends=('pcre' 'libcap' 'gdbm' 'clang')
 source=("http://www.zsh.org/pub/${pkgname}-${pkgver}.tar.xz"
         "http://www.zsh.org/pub/${pkgname}-${pkgver}-doc.tar.xz"
+        '0001-50629-do-not-use-egrep-in-tests.patch'
         'zprofile')
 md5sums=('182e37ca3fe3fa6a44f69ad462c5c30e'
          '8db53446f613521fb4f9b0bd9f6adda1'
+         '9ed41f76a785022be76f8b6b8f46e086'
          '92946911e57d05f1a3f1272b136c85b5')
 
 prepare() {
 	cd "${srcdir}/${pkgname}-${pkgver}"
+
+	# 50629: do not use egrep in tests
+	patch -Np1 < ../0001-50629-do-not-use-egrep-in-tests.patch
 
 	# Set correct keymap path
 	sed -i 's#/usr/share/keymaps#/usr/share/kbd/keymaps#g' Completion/Unix/Command/_loadkeys
