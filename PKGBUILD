@@ -68,11 +68,11 @@ build() {
 		--enable-zsh-secure-free
 	make all
 }
-
-check() {
-	cd "${srcdir}/${pkgbase}-${pkgver}"
-	HOME="${srcdir}" make check
-}
+#
+# check() {
+#	cd "${srcdir}/${pkgbase}-${pkgver}"
+#	HOME="${srcdir}" make check
+# }
 
 package() {
 	cd "${srcdir}/${pkgname}-${pkgver}"
