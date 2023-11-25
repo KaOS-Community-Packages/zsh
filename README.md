@@ -9,7 +9,7 @@ The introductory document details some of the unique features of zsh. It assumes
 *More information can be found on the "Zsh Web Pages" sites.*
 
 
-##### HOME: http://www.zsh.org/ | SOURCE: https://zsh.sourceforge.io/
+##### [HOME](http://www.zsh.org/) | [SOURCE](https://zsh.sourceforge.io/)
 
 #### Install:
 
