@@ -1,6 +1,6 @@
 pkgname=zsh
 pkgver=5.9
-pkgrel=4
+pkgrel=5
 pkgdesc='A very advanced and programmable command interpreter (shell) for UNIX'
 arch=('x86_64')
 url='http://www.zsh.org/'
@@ -12,9 +12,13 @@ install=zsh.install
 source=("http://www.zsh.org/pub/${pkgname}-${pkgver}.tar.xz"
         "http://www.zsh.org/pub/${pkgname}-${pkgver}-doc.tar.xz"
         '0001-50629-do-not-use-egrep-in-tests.patch'
-		'fix-autocompletion.patch'
+        'fix-autocompletion.patch'
         'zprofile')
-sha512sums=('SKIP' 'SKIP' 'SKIP' 'SKIP' 'SKIP')
+sha256sums=('9b8d1ecedd5b5e81fbf1918e876752a7dd948e05c1a0dba10ab863842d45acd5'
+            '6f7c091249575e68c177c5e8d5c3e9705660d0d3ca1647aea365fd00a0bd3e8a'
+            'bcce55ff5a81a321c501b7749a7d3e2031004c0ab999d80c35eeb4b9ce7efdf0'
+            'e7060f64936bcc94aeaf44e69b6d476917a8c14cd339a3bc779c080fb01bb2f7'
+            'b77f3879b0e88990aa70a01d974f7cbf06f870f8de5093fa4b7b264bc54575c0')
 
 prepare() {
 	cd "${srcdir}/${pkgname}-${pkgver}"
@@ -37,7 +41,7 @@ prepare() {
 		rm -rf Completion/$_fpath
 		sed "s#\s*Completion/$_fpath/\*/\*##g" -i Src/Zle/complete.mdd
 	done
-	rm -f Completion/Linux/Command/_pkgtool
+	rm -f Completion/Linux/Command/{_pkgtool,rpmbuild,yast}
 
 	# force generation of documentation with correct paths
 	rm -f Doc/version.yo
